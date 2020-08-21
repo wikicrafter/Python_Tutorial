@@ -20,3 +20,18 @@ mathematical function by itself,
 although this isn't beyond the realms of possibility in the near future.
 Contemporary computers can only evaluate the results of very fundamental operations,
 like adding or dividing,  but they can do it very fast, and can repeat these actions virtually any number of times.
+Imagine that you want to know the average speed you've reached during a long journey. 
+You know the distance, you know the time, you need the speed.
+Naturally, the computer will be able to compute this, but the computer
+is not aware of such things as distance, speed or time. 
+Therefore, it is necessary to instruct the computer to:
+1.accept a number representing the distance;
+2.accept a number representing the travel time;
+3.divide the former value by the latter and store the result in the memory;
+4.display the result (representing the average speed) in a readable format.
+These four simple actions form a program. 
+Of course, these examples are not formalized, and they are very far from what the computer can
+understand, but they are good enough to be translated into a language the computer can accept.
+Language is the keyword.
+
+
