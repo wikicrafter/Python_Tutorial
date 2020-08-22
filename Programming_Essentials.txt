@@ -487,6 +487,15 @@ Most errors will be defined by IDLE
 
 Always try to spoil and fix your code - see what will happen.
 ______________________________________________________________________________________________________________
+This course does not require you to install any software applications to test your code and do the exercises.
+To test or experiment with your code, you can use link provided fown here:
+https://repl.it/repls/RoundedFlickeringDisassembly#main.py
+repl.it allows different languages run in an internet browser. 
+also you can use many different ODE which stands for  "Online Integrated Environment"
+Now copy the following code:
+print("Hello!")
+print("Welcome to Python Essentials!")
+print("THIS IS ME.")
 
 ______________________________________________________________________________________________________________
 
