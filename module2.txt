@@ -1,0 +1,5 @@
+Programming Essentials in Python: Module 2
+In this module, you will learn about:
+1.data types and the basic methods of formatting, converting, inputting and outputting data;
+2.operators;
+3.variables.
