@@ -416,4 +416,71 @@ If you're a macOS user, a version of Python 2 may already have been preinstalled
 you will still need to download and install the relevant .pkg file from the Python site.
 _______________________________________________________________________________________________________________
 
+Starting your work with Python
+Now that you have Python 3 installed, it's time to check if it works and make the very first use of it.
+This will be a very simple procedure, but it should be enough to convince you that the Python environment is complete and functional.
+There are many ways of utilizing Python, especially if you're going to be a Python developer.
+To start your work, you need the following tools:
+1.an editor which will support you in writing the code (it should have some special features, not available in simple tools); this 
+dedicated editor will give you more than the standard OS equipment;
+2.a console in which you can launch your newly written code and stop it forcibly when it gets out of control;
+3.a tool named a debugger, able to launch your code step by step and allowing you to inspect it at each moment of execution.
+Besides its many useful components, the Python 3 standard installation contains a very simple but extremely useful application named IDLE.
+IDLE is an acronym: Integrated Development and Learning Environment.
+Navigate through your OS menus, find IDLE somewhere under Python 3.x and launch it.
+______________________________________________________________________________________________________________
+How to write and run your very first program
 
+It is now time to write and run your first Python 3 program. It will be very simple, for now.
+The first step is to create a new source file and fill it with code. Click File in the IDLE’s menu and choose New file.
+IDLE opens a new window for you. You can use it to write and amend your code.
+This is the editor window. Its only purpose is to be a workplace in which your source code is treated. 
+Do not confuse the editor window with the shell window. They perform different functions.
+Click File (in the new window), then click Save as..., select a folder for the new file 
+(the desktop is a good place for your first programming attempts) and chose a name for the new file.
+Note: don't set any extension for the file name you are going to use. Python needs its files to have 
+the .py extension, so you should rely on the dialog window's defaults. Using the standard .py extension 
+enables the OS to properly open these files.
+______________________________________________________________________________________________________________
+How to write and run your very first program
+Now put just one line into your newly opened and named editor window.
+The line looks like this:
+print("Hi there")
+You can use the clipboard to copy the text into the file.
+We're not going to explain the meaning of the program right now. You'll find a detailed discussion in 
+the next chapter.
+These are the simplest form of quotation marks (neutral, straight, dumb, etc.) commonly used in source files. 
+Do not try to use typographic quotes (curved, curly, smart, etc.), used by advanced text processors, 
+as Python doesn’t accept them.
+If everything goes okay and there are no mistakes in the code, the console window will show you the effects 
+caused by running the program.
+In this case, the program Hi there.
+Try to run it once again. And once more.
+Now close both windows now and return to the desktop
+______________________________________________________________________________________________________________
+
+How to spoil and fix your code
+Now start IDLE again
+Click File, Open, point to the file you saved previously and let IDLE read it in.
+Try to run it again by pressing F5 when the editor window is active.
+IDLE is able to save your code and retrieve it when you need it again.
+IDLE contains one additional and helpful feature.
+First, remove the closing parenthesis.
+Then enter the parenthesis again
+Every time you put the closing parenthesis in your program, IDLE will show the part of the text 
+limited with a pair of corresponding parentheses. This helps you to remember to place them in pairs.
+Remove the closing parenthesis again. The code becomes erroneous. It contains a syntax error now. 
+IDLE should not let you run it.
+Try to run the program again. IDLE will remind you to save the modified file. Follow the instructions.
+______________________________________________________________________________________________________________
+How to spoil and fix your code
+Watch all the windows carefully.
+print ("Hi there" // here will be erro 
+A new window appears – it says that the interpreter has encountered an EOF (end-of-file) although 
+(in its opinion) the code should contain some more text.
+The editor window shows clearly where it happened.
+Fix the code now. It should look like this: print("Hi there)
+Run it to see if it "Hi there" again
+Let's spoil the code one more time. Remove one letter from the word print. Run the code by 
+pressing F5. As you can see, Python is not able to recognize the error.
+______________________________________________________________________________________________________________
