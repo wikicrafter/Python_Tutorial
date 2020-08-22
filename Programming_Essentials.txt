@@ -1,3 +1,5 @@
+Module 1
+_________
 In this module, you will learn about:
 
 the fundamentals of computer programming;
@@ -365,5 +367,53 @@ translate it into "C". Certainly, "C" will run much faster than pure Python.
 This is what Cython is intended to do - to automatically translate the Python code (clean and clear, but 
 not too swift) into "C" code (complicated and talkative, but agile).
 _____________________________________________________________________________________________________________
+
+Jython
+Another version if Python is a Jython
+"J" is for "Java". Imagine a Python written in Java instead of C. This is useful, for example, if you 
+develop large and complex systems written entirely in Java and want to add some Python flexibility to them. 
+The traditional CPython may be difficult to integrate into such an environment, as C and Java live in 
+completely different worlds and don't share many common ideas. 
+Jython can communicate with existing Java infrastructure more effectively. This is why some projects find it usable and needful.
+Note: the current Jython implementation follows Python 2 standards. There is no Jython conforming to Python 3, so far.
+
+PyPy and RPython
+PyPy is a Python within a Python. 
+In other words, it represents a Python environment written in Python-like language named RPython 
+(Restricted Python). It is actually a subset of Python. The source code of PyPy is not run in the 
+interpretation manner, but is instead translated into the C programming language and then executed 
+separately.
+This is useful because if you want to test any new feature that may be (but doesn't have to be) 
+introduced into mainstream Python implementation, it's easier to check it with PyPy than with CPython. 
+This is why PyPy is rather a tool for people developing Python than for the rest of the users.
+This doesn't make PyPy any less important or less serious than CPython, of course.
+In addition, PyPy is compatible with the Python 3 language.
+There are many more different Pythons in the world. You'll find them if you look.
+_____________________________________________________________________________________________________________
+
+How to get Python and how to get to use it
+There are several ways to get your own copy of Python 3, depending on the operating system you use.
+Linux users most probably have Python already installed - this is the most likely scenario, as Python's 
+infrastructure is intensively used by many Linux OS components.
+Linux users most probably have Python already installed - this is the most likely scenario, as Python's 
+infrastructure is intensively used by many Linux OS components.
+If you're a Linux user, open the terminal/console, and type: python3
+at the shell prompt, press Enter and wait.
+
+If Python 3 is absent, then refer to your Linux documentation in order to find how to use your package 
+manager to download and install a new package - the one you need is named python3 or its name begins with that.
+All non-Linux users can download a copy at https://www.python.org/downloads/.
+______________________________________________________________________________________________________________
+
+Downloading and installing Python
+Because the browser tells the site you've entered the OS you use, the only step you have to take is to 
+click the appropriate Python version you want.
+In this case, select Python 3. The site always offers you the latest version of it.
+If you're a Windows user, start the downloaded .exe file and follow all the steps.
+Leave the default settings the installer suggests for now, with one exception - look at the checkbox named Add Python 3.x to PATH and check it.
+This will make things easier.
+If you're a macOS user, a version of Python 2 may already have been preinstalled on your computer, but since we will be working with Python 3, 
+you will still need to download and install the relevant .pkg file from the Python site.
+_______________________________________________________________________________________________________________
 
 
