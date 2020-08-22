@@ -497,5 +497,8 @@ print("Hello!")
 print("Welcome to Python Essentials!")
 print("THIS IS ME.")
 
+...then click that provided link, paste the code in the editor window, 
+and click the Run button to see what happens.
+
 ______________________________________________________________________________________________________________
 
