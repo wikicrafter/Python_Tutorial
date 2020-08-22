@@ -502,3 +502,15 @@ and click the Run button to see what happens.
 
 ______________________________________________________________________________________________________________
 
+Congratulations! You have completed Module 1.
+Well done! You've reached the end of Module 1 and completed a major milestone in your Python programming education. 
+Here's a short summary of the objectives you've covered and got familiar with in Module 1:
+1.the fundamentals of computer programming, i.e., how the computer works, how the program is executed, how the 
+programming language is defined and constructed,
+2.the difference between compilation and interpretation;
+3.the basic information about Python and how it is positioned among other programming languages, and what 
+distinguishes its different versions
+4.the study resources and different types of interfaces you will be using in the course
+
+End of first module.
+______________________________________________________________________________________________________________
