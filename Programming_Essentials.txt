@@ -483,4 +483,10 @@ Fix the code now. It should look like this: print("Hi there)
 Run it to see if it "Hi there" again
 Let's spoil the code one more time. Remove one letter from the word print. Run the code by 
 pressing F5. As you can see, Python is not able to recognize the error.
+Most errors will be defined by IDLE
+
+Always try to spoil and fix your code - see what will happen.
 ______________________________________________________________________________________________________________
+
+______________________________________________________________________________________________________________
+
