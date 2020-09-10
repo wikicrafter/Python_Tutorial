@@ -559,4 +559,99 @@ print("The largest number is:", largest_number)
 
 Check how this code implements the algorithm we showed you earlier.
 ____________________________________________________________________________________________________________
-3.1.2.2 Loops in Python | while
+The while loop: more examples
+Let's look at another example employing the while loop. Follow the comments to find out the idea and the solution.
+# A program that reads a sequence of numbers
+# and counts how many numbers are even and how many are odd.
+# The program terminates when zero is entered.
+odd_numbers = 0
+even_numbers = 0
+# read the first number
+number = int(input("Enter a number or type 0 to stop: "))
+# 0 terminates execution
+while number != 0:
+    # check if the number is odd
+    if number % 2 == 1:
+        # increase the odd_numbers counter
+        odd_numbers += 1
+    else:
+          # increase the even_numbers counter
+        even_numbers += 1
+    # read the next number
+     number = int(input("Enter a number or type 0 to stop: "))
+# print results
+print("Odd numbers count:", odd_numbers)
+print("Even numbers count:", even_numbers)
+Certain expressions can be simplified without changing the program's behavior.
+Try to recall how Python interprets the truth of a condition, and note that these two forms are equivalent:
+while number != 0: and while number:.
+The condition that checks if a number is odd can be coded in these equivalent forms, too:
+if number % 2 == 1: and if number % 2:.
+Using a counter variable to exit a loop
+Look at the snippet below:
+
+counter = 5
+while counter != 0:
+    print("Inside the loop.", counter)
+    counter -= 1
+print("Outside the loop.", counter)
+This code is intended to print the string "Inside the loop." and the value stored in the counter variable 
+during a given loop exactly five times.
+Once the condition has not been met (the counter variable has reached 0), the loop is exited, and the 
+message "Outside the loop." as well as the value stored in counter is printed.
+But there's one thing that can be written more compactly - the condition of the while loop.
+Can you see the difference?
+counter = 5
+while counter:
+    print("Inside the loop.", counter)
+    counter -= 1
+print("Outside the loop.", counter)
+
+Is it more compact than previously? A bit. Is it more legible? That's disputable.
+
+Remember 
+Don't feel obliged to code your programs in a way that is always the shortest and the most compact. 
+Readability may be a more important factor. Keep your code ready for a new programmer.
+____________________________________________________________________________________________________________
+Little lab for better understanding:
+Estimated time 15minutes
+Level of difficulty: easy
+Objectives
+Familiarize the student with:
+using the while loop;
+reflecting real-life situations in computer code.
+Scenario
+A junior magician has picked a secret number. He has hidden it in a variable named secret_number. He wants 
+everyone who run his program to play the Guess the secret number game, and guess what number he has picked 
+for them. Those who don't guess the number will be stuck in an endless loop forever! Unfortunately, 
+he does not know how to complete the code.
+Your task is to help the magician complete the code in the editor in such a way so that the code:
+will ask the user to enter an integer number;
+will use a while loop;
+will check whether the number entered by the user is the same as the
+number picked by the magician. If the number chosen by the user is different than the magician's secret number, 
+the user should see the message "Ha ha! You're stuck in my loop!"
+and be prompted to enter a number again. 
+If the number entered by the user matches the number picked by the magician, the number should be printed to 
+the screen, and the magician should say the following words: "Well done, muggle! You are free now."
+
+The magician is counting on you! Don't disappoint him.
+EXTRA INFO
+By the way, look at the print() function. The way we've used it here is called multi-line printing. 
+You can use triple quotes to print strings on multiple lines in order to make text easier to read, or 
+create a special text-based design. Experiment with it.
+
+secret_number = 2020
+
+print(
+"""
++================================+
+| Welcome to my game, muggle!    |
+| Enter an integer number        |
+| and guess what number I've     |
+| picked for you.                |
+| So, what is the secret number? |
++================================+
+""")
+____________________________________________________________________________________________________________
+
