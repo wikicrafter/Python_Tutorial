@@ -1,5 +1,6 @@
 looping yout code with while : module3 | line 493
 Looping your code with for   : module3.txt | 657
 LAB: Essentials of the for loop - counting mississippily : countmississippily.py | line 1 - 11 
+LAB: The break statement - Stuck in a loop |  stuckinaloop.py  
 
 
