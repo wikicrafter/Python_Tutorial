@@ -7,6 +7,7 @@ The while loop and the else branch : module3 | line: 959
 LAB: Essentials of the while loop : module3 | line: 1009 | essentialsofthewhileloop.py
 LAB: Collatz's hypothesis : module3 | line :1036 | collatzshypothesis,py
 SECTION SUMMARY | while and for loop | line : 1097 | additionally exercises with answers | line : 1171
+Logic and bit operations in Python | and, or, not  | module3 | line: 1253 
 
 
 
