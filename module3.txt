@@ -1415,3 +1415,227 @@ x = x | y	x |= y
 x = x ^ y	x ^= y
 ____________________________________________________________________________________________________________
 11.01.11.110
+How do we deal with single bits?
+We'll now show you what you can use bitwise operators for. Imagine that you're a developer obliged to 
+write an important piece of an operating system. You've been told that you're allowed to use a variable 
+assigned in the following way:
+flagRegister = 0x1234
+The variable stores the information about various aspects of system operation. Each bit of the variable 
+stores one yes/no value. You've also been told that only one of these bits is yours - the third (remember 
+that bits are numbered from zero, and bit number zero is the lowest one, while the highest is number 31). 
+The remaining bits are not allowed to change, because they're intended to store other data. Here's your 
+bit marked with the letter x:
+flagRegister = 0000000000000000000000000000x000
+You may be faced with the following tasks:
+1. Check the state of your bit - you want to find out the value of your bit; comparing the whole 
+variable to zero will not do anything, because the remaining bits can have completely unpredictable 
+values, but you can use the following conjunction property:
+x & 1 = x
+x & 0 = 0
+If you apply the & operation to the flagRegister variable along with the following bit image:
+00000000000000000000000000001000
+(note the 1 at your bit's position) as the result, you obtain one of the following bit strings:
+00000000000000000000000000001000 if your bit was set to 1
+0000000000000000000000000000000 if your bit was reset to 0
+
+Such a sequence of zeros and ones, whose task is to grab the value or to change the selected bits, is called a bit mask.
+Let's build a bit mask to detect the state of your bit. It should point to the third bit. That bit has the weight 
+of 23 = 8. A suitable mask could be created by the following declaration:
+theMask = 8
+
+You can also make a sequence of instructions depending on the state of your bit i here it is:
+
+if flagRegister & theMask:
+    # my bit is set
+else:
+    # my bit is reset
+
+2. Reset your bit - you assign a zero to the bit while all the other bits must remain unchanged; let's use the same 
+property of the conjunction as before, but let's use a slightly different mask - exactly as below:
+11111111111111111111111111110111
+Note that the mask was created as a result of the negation of all the bits of theMask variable. Resetting the bit is simple, and looks like this (choose the one you like more):
+flagRegister = flagRegister & ~theMask
+
+flagregister &= ~theMask
+3. Set your bit - you assign a 1 to your bit, while all the remaining bits must remain unchanged; 
+use the following disjunction property:
+x | 1 = 1
+x | 0 = x
+
+You're now ready to set your bit with one of the following instructions:
+flagRegister = flagRegister | theMask
+
+flagRegister |= theMask
+4. Negate your bit - you replace a 1 with a 0 and a 0 with a 1. You can use an interesting property of the xor operator:
+x ^ 1 = ~x
+x ^ 0 = x
+and negate your bit with the following instructions:
+flagRegister = flagRegister ^ theMask
+
+flagRegister ^= theMask
+____________________________________________________________________________________________________________
+11.1.11.101
+Binary left shift and binary right shift
+Python offers yet another operation relating to single bits: shifting. This is applied only to integer values, 
+and you mustn't use floats as arguments for it.
+You already apply this operation very often and quite unconsciously. How do you multiply any number by ten? Take a look:
+12345 × 10 = 123450
+As you can see, multiplying by ten is in fact a shift of all the digits to the left and filling the resulting gap with zero.
+
+Division by ten? Take a look:
+12340 ÷ 10 = 1234
+Dividing by ten is nothing but shifting the digits to the right.
+The same kind of operation is performed by the computer, but with one difference: as two is the base for 
+binary numbers (not 10), shifting a value one bit to the left thus corresponds to multiplying it by two; 
+respectively, shifting one bit to the right is like dividing by two (notice that the rightmost bit is lost).
+The shift operators in Python are a pair of digraphs: << and >>, clearly suggesting in which direction the shift will act.
+value << bits
+value >> bits
+
+The left argument of these operators is an integer value whose bits are shifted. The right argument 
+determines the size of the shift.
+
+It shows that this operation is certainly not commutative.
+The priority of these operators is very high. You'll see them in the updated table of priorities, which we'll show you 
+at the end of this section.
+Take a look at the shifts in the editor window.
+The final print() invocation produces the following output:
+17 68 8
+Note:
+17 // 2 → 8 (shifting to the right by one bit is the same as integer division by two)
+17 * 4 → 68 (shifting to the left by two bits is the same as integer multiplication by four)
+And here is the updated priority table, containing all the operators introduced so far:
+
+Priority	Operator	
+1	~, +, -	unary
+2	**	
+3	*, /, //, %	
+4	+, -	binary
+5	<<, >>	
+6	<, <=, >, >=	
+7	==, !=	
+8	&	
+9	|	
+10	=, +=, -=, *=, /=, %=, &=, ^=, |=, >>=, <<=
+____________________________________________________________________________________________________________
+11.1.11.110
+Key takeaways:
+1. Python supports the following logical operators:
+and → if both operands are true, the condition is true, e.g., (True and True) is True,
+or → if any of the operands are true, the condition is true, e.g., (True or False) is True,
+not → returns false if the result is true, and returns true if the result is false, e.g., not 
+True is False.
+2. You can use bitwise operators to manipulate single bits of data. The following sample data:
+x = 15, which is 0000 1111 in binary,
+y = 16, which is 0001 0000 in binary.
+will be used to illustrate the meaning of bitwise operators in Python. Analyze the examples below:
+& does a bitwise and, e.g., x & y = 0, which is 0000 0000 in binary,
+| does a bitwise or, e.g., x | y = 31, which is 0001 1111 in binary,
+˜ does a bitwise not, e.g., ˜ x = 240, which is 1111 0000 in binary,
+^ does a bitwise xor, e.g., x ^ y = 31, which is 0001 1111 in binary,
+>> does a bitwise right shift, e.g., y >> 1 = 8, which is 0000 1000 in binary,
+<< does a bitwise left shift, e.g., y << 3 = , which is 1000 0000 in binary,
+____________________________________________________________________________________________________________
+11.1.101.1
+Why do we need lists?
+It may happen that you have to read, store, process, and finally, print dozens, maybe hundreds, perhaps 
+even thousands of numbers. What then? Do you need to create a separate variable for each value? Will you 
+have to spend long hours writing statements like the one below?
+var1 = int(input())
+var2 = int(input())
+var3 = int(input())
+var4 = int(input())
+var5 = int(input())
+var6 = int(input())
+:
+:
+
+If you don't think that this is a complicated task, then take a piece of paper and write a program that:
+reads five numbers,
+prints them in order from the smallest to the largest (NB, this kind of processing is called sorting).
+You should find that you don't even have enough paper to complete the task.
+So far, you've learned how to declare variables that are able to store exactly one given value at a time. 
+Such variables are sometimes called scalars by analogy with mathematics. All the variables you've used so 
+far are actually scalars.
+
+Think of how convenient it would be to declare a variable that could store more than one value. 
+For example, a hundred, or a thousand or even ten thousand. It would still be one and the same variable, 
+but very wide and capacious. Sounds appealing? Perhaps, but how would it handle such a container full of 
+different values? How would it choose just the one you need?
+
+What if you could just number them? And then say: give me the value number 2; assign the value number 15; increase the value number 10000.
+We'll show you how to declare such multi-value variables. We'll do this with the example we just suggested. 
+We'll write a program that sorts a sequence of numbers. We won't be particularly ambitious - we'll assume 
+that there are exactly five numbers.
+Let's create a variable called numbers; it's assigned with not just one number, but is filled with a list 
+consisting of five values (note: the list starts with an open square bracket and ends with a closed square 
+bracket; the space between the brackets is filled with five numbers separated by commas).
+numbers = [10, 5, 7, 2, 1]
+Let's say the same thing using adequate terminology: numbers is a list consisting of five values, all of them numbers. We can also 
+say that this statement creates a list of length equal to five (as in there are five elements inside it).
+The elements inside a list may have different types. Some of them may be integers, others floats, and yet others may be lists.
+Python has adopted a convention stating that the elements in a list are always numbered starting from zero. 
+This means that the item stored at the beginning of the list will have the number zero. Since there are 
+five elements in our list, the last of them is assigned the number four. Don't forget this.
+You'll soon get used to it, and it'll become second nature.
+Before we go any further in our discussion, we have to state the following: our list is a collection of elements, 
+but each element is a scalar.
+____________________________________________________________________________________________________________
+11.1.101.10
+Indexing lists
+How do you change the value of a chosen element in the list?
+Let's assign a new value of 111 to the first element in the list. We do it this way:numbers = [10, 5, 7, 2, 1]
+print("Original list content:", numbers) # printing original list content
+
+numbers[0] = 111
+print("New list content: ", numbers) # current list content
+
+And now we want the value of the fifth element to be copied to the second element - can you guess how to do it?
+numbers = [10, 5, 7, 2, 1]
+print("Original list content:", numbers) # printing original list content
+
+numbers[0] = 111
+print("\nPrevious list content:", numbers) # printing previous list content
+
+numbers[1] = numbers[4] # copying value of the fifth element to the second
+print("New list content:", numbers) # printing current list content
+
+The value inside the brackets which selects one element of the list is called an index, while the operation of 
+selecting an element from the list is known as indexing.
+We're going to use the print() function to print the list content each time we make the changes. This will 
+help us follow each step more carefully and see what's going on after a particular list modification.
+Note: all the indices used so far are literals. Their values are fixed at runtime, but any expression can 
+be the index, too. This opens up lots of possibilities.
+____________________________________________________________________________________________________________
+11.1.101.11
+Accessing list content
+Each of the list's elements may be accessed separately. For example, it can be printed:
+print(numbers[0]) # accessing the list's first element
+Assuming that all of the previous operations have been completed successfully, the snippet will send 111 to the console.
+
+As you can see in the editor, the list may also be printed as a whole - just like here:
+print(numbers) # printing the whole list
+As you've probably noticed before, Python decorates the output in a way that suggests that all the presented values 
+form a list. The output from the example snippet above looks like this:
+[111, 1, 7, 2, 1]
+The len() function
+The length of a list may vary during execution. New elements may be added to the list, while others may be removed 
+from it. This means that the list is a very dynamic entity.
+If you want to check the list's current length, you can use a function named len() (its name comes from length).
+The function takes the list's name as an argument, and returns the number of elements currently stored inside 
+the list (in other words - the list's length).
+Look at the last line of code in the editor, run the program and check what value it will print to the console. Can you guess?
+
+code sample:
+numbers = [10, 5, 7, 2, 1]
+print("Original list content:", numbers) # printing original list content
+
+numbers[0] = 111
+print("\nPrevious list content:", numbers) # printing previous list content
+
+numbers[1] = numbers[4] # copying value of the fifth element to the second
+print("Previous list content:", numbers) # printing previous list content
+
+print("\nList length:", len(numbers)) # printing the list's length
+____________________________________________________________________________________________________________
+11.1.101.101
