@@ -2206,3 +2206,499 @@ list2 = list1
 list1[0] = 2
 print(list2)
 ____________________________________________________________________________________________________________
+Powerful slices
+Fortunately, the solution is at your fingertips - its name is the slice.
+A slice is an element of Python syntax that allows you to make a brand new copy of a list, or parts of a list.
+It actually copies the list's contents, not the list's name.
+This is exactly what you need. Take a look at the snippet below:
+list1 = [1]
+list2 = list1[:]
+list1[0] = 2
+print(list2)
+Its output is [1].
+This inconspicuous part of the code described as [:] is able to produce a brand new list.
+One of the most general forms of the slice looks as follows:
+myList[start:end]
+As you can see, it resembles indexing, but the colon inside makes a big difference.
+A slice of this form makes a new (target) list, taking elements from the source list - the elements of 
+the indices from start to end - 1.
+Note: not to end but to end - 1. An element with an index equal to end is the first element which 
+does not take part in the slicing
+Using negative values for both start and end is possible (just like in indexing).
+Take a look at the snippet:
+myList = [10, 8, 6, 4, 2]
+newList = myList[1:3]
+print(newList)
+The newList list will have end - start (3 - 1 = 2) elements - the ones with indices equal to 1 and 2 (but not 3).
+The snippet's output is: [8, 6]
+# Copying the whole list
+list1 = [1]
+list2 = list1[:]
+list1[0] = 2
+print(list2)
+
+# Copying part of the list
+myList = [10, 8, 6, 4, 2]
+newList = myList[1:3]
+print(newList)
+____________________________________________________________________________________________________________
+Slices - negative indices
+Look at the snippet below:
+myList[start:end]
+To repeat:
+start is the index of the first element included in the slice;
+end is the index of the first element not included in the slice.
+This is how negative indices work with the slice:
+
+myList = [10, 8, 6, 4, 2]
+newList = myList[1:-1]
+print(newList)
+The snippet's output is: [8, 6, 4].
+If the start specifies an element lying further than the one described by the end (from the list's 
+beginning point of view), the slice will be empty:
+myList = [10, 8, 6, 4, 2]
+newList = myList[-1:1]
+print(newList)
+The snippet's output is: [].
+____________________________________________________________________________________________________________
+Slices: continued
+If you omit the start in your slice, it is assumed that you want to get a slice beginning at the element with index 0.
+In other words, the slice of this form:
+myList[:end]
+is a more compact equivalent of:
+myList[0:end]
+Look at the snippet below:
+myList = [10, 8, 6, 4, 2]
+newList = myList[:3]
+print(newList)
+This is why its output is: [10, 8, 6].
+Similarly, if you omit the end in your slice, it is assumed that you want the slice to end at the element with the index len(myList).
+In other words, the slice of this form:
+myList[start:]
+is a more compact equivalent of:
+myList[start:len(myList)]
+Look at the following snippet:
+myList = [10, 8, 6, 4, 2]
+newList = myList[3:]
+print(newList)
+Its output is therefore: [4, 2].
+____________________________________________________________________________________________________________
+Slices: continued
+As we've said before, omitting both start and end makes a copy of the whole list:
+myList = [10, 8, 6, 4, 2]
+newList = myList[:]
+print(newList)
+The snippet's output is: [10, 8, 6, 4, 2].
+The previously described del instruction is able to delete more than just a list's element at once - it can delete slices too:
+myList = [10, 8, 6, 4, 2]
+del myList[1:3]
+print(myList)
+Note: in this case, the slice doesn't produce any new list!
+The snippet's output is: [10, 4, 2].
+Deleting all the elements at once is possible too:
+myList = [10, 8, 6, 4, 2]
+del myList[:]
+print(myList)
+The list becomes empty, and the output is: [].
+Removing the slice from the code changes its meaning dramatically.
+Take a look:
+myList = [10, 8, 6, 4, 2]
+del myList
+print(myList
+The del instruction will delete the list itself, not its content.
+The print() function invocation from the last line of the code will then cause a runtime error.
+
+____________________________________________________________________________________________________________
+The in and not in operators
+Python offers two very powerful operators, able to look through the list in order to check whether a 
+specific value is stored inside the list or not.
+
+These operators are:
+elem in myList
+elem not in myList
+The first of them (in) checks if a given element (its left argument) is currently stored somewhere 
+inside the list (the right argument) - the operator returns True in this case.
+
+The second (not in) checks if a given element (its left argument) is absent in a list - the operator returns True in this case.
+Look at the code in the editor. The snippet shows both operators in action. Can you guess its output? Run the program to check if you were right.
+myList = [0, 3, 12, 8, 2]
+
+print(5 in myList)
+print(5 not in myList)
+print(12 in myList)
+____________________________________________________________________________________________________________
+Lists - some simple programs
+Now we want to show you some simple programs utilizing lists.
+The first of them tries to find the greater value in the list. Look at the code in the editor
+The concept is rather simple - we temporarily assume that the first element is the largest one, 
+and check the hypothesis against all the remaining elements in the list.
+The code outputs 17 (as expected).
+The code may be rewritten to make use of the newly introduced form of the for loop:
+myList = [17, 3, 11, 5, 1, 9, 7, 15, 13]
+largest = myList[0]
+
+for i in myList:
+    if i > largest:
+        largest = i
+
+print(largest)
+
+The program above performs one unnecessary comparison, when the first element is compared with itself, but this isn't a problem at all.
+The code outputs 17, too (nothing unusual).
+If you need to save computer power, you can use a slice:
+myList = [17, 3, 11, 5, 1, 9, 7, 15, 13]
+largest = myList[0]
+
+for i in myList[1:]:
+    if i > largest:
+        largest = i
+
+print(largest)
+
+The question is: which of these two actions consumes more computer resources - just one comparison, 
+or slicing almost all of a list's elements?
+myList = [17, 3, 11, 5, 1, 9, 7, 15, 13]
+largest = myList[0]
+
+for i in range(1, len(myList)):
+    if myList[i] > largest:
+        largest = myList[i]
+
+print(largest)
+
+____________________________________________________________________________________________________________
+Lists - some simple programs
+Now let's find the location of a given element inside a list:
+myList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+toFind = 5
+found = False
+
+for i in range(len(myList)):
+    found = myList[i] == toFind
+    if found:
+        break
+
+if found:
+    print("Element found at index", i)
+else:
+    print("absent")
+
+Note:
+the target value is stored in the toFind variable;
+the current status of the search is stored in the found variable (True/False)
+when found becomes True, the for loop is exited.
+
+Let's assume that you've chosen the following numbers in the lottery: 3, 7, 11, 42, 34, 49.
+The numbers that have been drawn are: 5, 11, 9, 42, 3, 49.
+The question is: how many numbers have you hit?
+The program will give you the answer:
+drawn = [5, 11, 9, 42, 3, 49]
+bets = [3, 7, 11, 42, 34, 49]
+hits = 0
+
+for number in bets:
+    if number in drawn:
+        hits += 1
+
+print(hits)
+
+Note:
+the drawn list stores all the drawn numbers;
+the bets list stores your bets;
+the hits variable counts your hits.
+The program output is: 4
+ code:
+ myList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+toFind = 4
+found = False
+
+for i in range(len(myList)):
+    found = myList[i] == toFind
+    if found:
+        break
+
+if found:
+    print("Element found at index", i)
+else:
+    print("absent")
+____________________________________________________________________________________________________________
+LAB: Operating with lists - basics
+
+Estimate time 10-15 minutes
+Level of difficulty: easy
+Objectives
+Familiarize the student with:
+list indexing;
+utilizing the in and not in operators.
+Scenario
+Imagine a list - not very long, not very complicated, just a simple list containing some integer numbers. 
+Some of these numbers may be repeated, and this is the clue. We don't want any repetitions. We want them 
+to be removed.
+
+Your task is to write a program which removes all the number repetitions from the list. 
+The goal is to have a list in which all the numbers appear not more than once.
+
+Note: assume that the source list is hard-coded inside the code - you don't have to enter it from the 
+keyboard. Of course, you can improve the code and add a part that can carry out a conversation with 
+the user and obtain all the data from her/him.
+
+Hint: we encourage you to create a new list as a temporary work area - you don't need to update the list in situ.
+We've provided no test data, as that would be too easy. You can use our skeleton instead.
+
+____________________________________________________________________________________________________________
+Section summery
+Key takeaways
+1. If you have a list l1, then the following assignment: l2 = l1 does not make a copy of the l1 list, 
+but makes the variables l1 and l2 point to one and the same list in memory. For example:
+vehiclesOne = ['car', 'bicycle', 'motor']
+print(vehiclesOne) # outputs: ['car', 'bicycle', 'motor']
+
+vehiclesTwo = vehiclesOne
+del vehiclesOne[0] # deletes 'car'
+print(vehiclesTwo) # outputs: ['bicycle', 'motor']
+
+2. If you want to copy a list or part of the list, you can do it by performing slicing:
+colors = ['red', 'green', 'orange']
+
+copyWholeColors = colors[:] # copy the whole list
+copyPartColors = colors[0:2] # copy part of the list
+3. You can use negative indices to perform slices, too. For example:
+sampleList = ["A", "B", "C", "D", "E"]
+newList = sampleList[2:-1]
+print(newList) # outputs: ['C', 'D']
+4. The start and end parameters are optional when performing a slice: list[start:end], e.g.:
+myList = [1, 2, 3, 4, 5]
+sliceOne = myList[2: ]
+sliceTwo = myList[ :2]
+sliceThree = myList[-2: ]
+
+print(sliceOne) # outputs: [3, 4, 5]
+print(sliceTwo) # outputs: [1, 2]
+print(sliceThree) # outputs: [4, 5]
+5. You can delete slices using the del instruction:
+myList = [1, 2, 3, 4, 5]
+del myList[0:2]
+print(myList) # outputs: [3, 4, 5]
+
+del myList[:]
+print(myList) # deletes the list content, outputs: []
+6. You can test if some items exist in a list or not using the keywords in and not in, e.g.:
+myList = ["A", "B", 1, 2]
+
+print("A" in myList) # outputs: True
+print("C" not in myList) # outputs: True
+print(2 not in myList) # outputs: False
+____________________________________________________________________________________________________________
+11.1.1000.1
+Lists in lists
+Lists can consist of scalars (namely numbers) and elements of a much more complex structure (you've 
+already seen such examples as strings, booleans, or even other lists in the previous Section Summary 
+lessons). Let's have a closer look at the case where a list's elements are just lists.
+
+We often find such arrays in our lives. Probably the best example of this is a chessboard.
+A chessboard is composed of rows and columns. There are eight rows and eight columns. Each column 
+is marked with the letters A through H. Each line is marked with a number from one to eight
+
+The location of each field is identified by letter-digit pairs. Thus, we know that the bottom right 
+corner of the board (the one with the white rook) is A1, while the opposite corner is H8.
+Let's assume that we're able to use the selected numbers to represent any chess piece. We can also 
+assume that every row on the chessboard is a list
+Look at the code below:
+row = []
+
+for i in range(8):
+    row.append(WHITE_PAWN)
+
+It builds a list containing eight elements representing the second row of the chessboard - the one 
+filled with pawns (assume that WHITE_PAWN is a predefined symbol representing a white pawn).
+The same effect may be achieved by means of a list comprehension, the special syntax used by Python in 
+order to fill massive lists.
+A list comprehension is actually a list, but created on-the-fly during program execution, and is not described statically.
+Take a look at the snippet:
+row = [WHITE_PAWN for i in range(8)]
+The part of the code placed inside the brackets specifies:
+the data to be used to fill the list (WHITE_PAWN)
+the clause specifying how many times the data occurs inside the list
+(for i in range(8))
+Let us show you some other list comprehension examples:
+Example #1:
+squares = [x ** 2 for x in range(10)]
+The snippet produces a ten-element list filled with squares of ten integer numbers starting from zero (0, 1, 4, 9, 16, 25, 36, 49, 64, 81)
+
+Example #2:
+twos = [2 ** i for i in range(8)]
+
+The snippet creates an eight-element array containing the first eight powers of two (1, 2, 4, 8, 16, 32, 64, 128)
+Example #3:
+odds = [x for x in squares if x % 2 != 0 ]
+The snippet makes a list with only the odd elements of the squares list.
+____________________________________________________________________________________________________________
+Lists in lists: two-dimensional arrays
+Let's also assume that a predefined symbol named EMPTY designates an empty field on the chessboard.
+So, if we want to create a list of lists representing the whole chessboard, it may be done in the following way:
+board = []
+
+for i in range(8):
+    row = [EMPTY for i in range(8)]
+    board.append(row)
+
+Note:
+the inner part of the loop creates a row consisting of eight elements (each of them equal to EMPTY) 
+and appends it to the board list;
+the outer part repeats it eight times;
+in total, the board list consists of 64 elements (all equal to EMPTY)
+This model perfectly mimics the real chessboard, which is in fact an eight-element list of 
+elements, all being single rows. Let's summarize our observations:
+the elements of the rows are fields, eight of them per row;
+the elements of the chessboard are rows, eight of them per chessboard.
+The board variable is now a two-dimensional array. It's also called, by analogy to algebraic terms, a matrix.
+As list comprehensions can be nested, we can shorten the board creation in the following way:
+board = [[EMPTY for i in range(8)] for j in range(8)]
+The inner part creates a row, and the outer part builds a list of rows.
+____________________________________________________________________________________________________________
+Lists in lists: two-dimensional arrays - continued
+Access to the selected field of the board requires two indices - the first selects the row; the second - 
+the field number inside the row, which is de facto a column number.
+Take a look at the chessboard. Every field contains a pair of indices which should be given to access the field's content:
+Glancing at the figure shown above, let's set some chess pieces on the board. First, let's add all the rooks:
+board[0][0] = ROOK
+board[0][7] = ROOK
+board[7][0] = ROOK
+board[7][7] = ROOK
+If you want to add a knight to C4, you do it as follows:
+board[4][2] = KNIGHT
+And now a pawn to E5:
+board[3][4] = PAWN
+And now - experiment with the code in the editor.
+____________________________________________________________________________________________________________
+Multidimensional nature of lists: advanced applications
+Let's go deeper into the multidimensional nature of lists. To find any element of a two-dimensional list, 
+you have to use two coordinates:
+a vertical one (row number)
+and a horizontal one (column number).
+Imagine that you develop a piece of software for an automatic weather station. The device records the 
+air temperature on an hourly basis and does it throughout the month. This gives you a total 
+of 24 × 31 = 744 values. Let's try to design a list capable of storing all these results.
+
+First, you have to decide which data type would be adequate for this application. In this case, a float 
+would be best, since this thermometer is able to measure the temperature with an accuracy of 0.1 ℃.
+
+Then you take an arbitrary decision that the rows will record the readings every hour on 
+the hour (so the row will have 24 elements) and each of the rows will be assigned to one day 
+of the month (let's assume that each month has 31 days, so you need 31 rows). Here's the appropriate 
+pair of comprehensions (h is for hour, d for day):
+
+ temps = [[0.0 for h in range(24)] for d in range(31)]
+
+The whole matrix is filled with zeros now. You can assume that it's updated automatically using special 
+hardware agents. The thing you have to do is to wait for the matrix to be filled with measurements.
+Now it's time to determine the monthly average noon temperature. Add up all 31 readings recorded at noon 
+and divide the sum by 31. You can assume that the midnight temperature is stored first. Here's the 
+relevant code:
+temps = [[0.0 for h in range(24)] for d in range(31)]
+#
+# the matrix is magically updated here
+#
+
+total = 0.0
+
+for day in temps:
+    total += day[11]
+
+average = total / 31
+
+print("Average temperature at noon:", average)
+
+Note: the day variable used by the for loop is not a scalar - each pass through the temps matrix 
+assigns it with the subsequent rows of the matrix; hence, it's a list. It has to be indexed with 11 
+to access the temperature value measured at noon.
+Now find the highest temperature during the whole month - see the code:
+temps = [[0.0 for h in range(24)] for d in range(31)]
+#
+# the matrix is magically updated here
+#
+
+highest = -100.0
+
+for day in temps:
+    for temp in day:
+        if temp > highest:
+            highest = temp
+
+print("The highest temperature was:", highest)
+
+Note:
+the day variable iterates through all the rows in the temps matrix;
+the temp variable iterates through all the measurements taken in one day.
+
+Now count the days when the temperature at noon was at least 20 ℃:
+temps = [[0.0 for h in range(24)] for d in range(31)]
+#
+# the matrix is magically updated here
+#
+
+hotDays = 0
+
+for day in temps:
+    if day[11] > 20.0:
+        hotDays += 1
+
+print(hotDays, "days were hot.")
+____________________________________________________________________________________________________________
+
+Three-dimensional arrays
+Python does not limit the depth of list-in-list inclusion. Here you can see an example of a three-dimensional 
+array:
+Imagine a hotel. It's a huge hotel consisting of three buildings, 15 floors each. There are 20 rooms on each floor. 
+For this, you need an array which can collect and process information on the occupied/free rooms.
+First step - the type of the array's elements. In this case, a Boolean value (True/False) would fit.
+Step two - calm analysis of the situation. Summarize the available information: three buildings, 15 floors, 20 rooms.
+Now you can create the array:
+rooms = [[[False for r in range(20)] for f in range(15)] for t in range(3)]
+The first index (0 through 2) selects one of the buildings; the second (0 through 14) selects the floor, the third 
+(0 through 19) selects the room number. All rooms are initially free.
+Now you can book a room for two newlyweds: in the second building, on the tenth floor, room 14:
+rooms[1][9][13] = True
+and release the second room on the fifth floor located in the first building:
+rooms[0][4][1] = False
+Check if there are any vacancies on the 15th floor of the third building:
+vacancy = 0
+
+for roomNumber in range(20):
+    if not rooms[2][14][roomNumber]:
+        vacancy += 1
+
+The vacancy variable contains 0 if all the rooms are occupied, or the number of available rooms otherwise.
+Congratulations! You've made it to the end of the module. Keep up the good work!
+____________________________________________________________________________________________________________
+Key takeaways
+1. List comprehension allows you to create new lists from existing ones in a concise and elegant way. 
+The syntax of a list comprehension looks as follows:
+[expression for element in list if conditional]
+
+which is actually an equivalent of the following code:
+for element in list:
+    if conditional:
+        expression
+
+Here's an example of a list comprehension - the code creates a five-element list filled with with 
+the first five natural numbers raised to the power of 3:
+
+cubed = [num ** 3 for num in range(5)]
+print(cubed) # outputs: [0, 1, 8, 27, 64]
+2. You can use nested lists in Python to create matrices (i.e., two-dimensional lists). For example:
+y:0 1 2 3
+x:0 1 2 3
+# A four-column/four-row table - a two dimensional array (4x4)
+
+table = [[":(", ":)", ":(", ":)"],
+         [":)", ":(", ":)", ":)"],
+         [":(", ":)", ":)", ":("],
+         [":)", ":)", ":)", ":("]]
+
+print(table)
+print(table[0][0]) # outputs: ':('
+print(table[0][3]) # outputs: ':)'
+3. You can nest as many lists in lists as you want, and therefore create n-dimensional lists, e.g., three-, four- or even sixty-four-dimensional arrays. For example:
+____________________________________________________________________________________________________________
+
