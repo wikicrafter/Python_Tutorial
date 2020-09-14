@@ -1,0 +1,7 @@
+Programming Essentials in Python | module 4
+In this module we will learn about:
+defining and using functions
+different ways of passing arguments
+name scopes
+tuples and dictionaries
+data processing 

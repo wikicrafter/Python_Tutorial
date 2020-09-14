@@ -2701,4 +2701,6 @@ print(table[0][0]) # outputs: ':('
 print(table[0][3]) # outputs: ':)'
 3. You can nest as many lists in lists as you want, and therefore create n-dimensional lists, e.g., three-, four- or even sixty-four-dimensional arrays. For example:
 ____________________________________________________________________________________________________________
+Congratulations! You have completed Module 3.
+Well done! You've reached the end of Module 3 and completed a major milestone in your Python programming education
 
