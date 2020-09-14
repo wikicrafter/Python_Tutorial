@@ -8,6 +8,9 @@ LAB: Essentials of the while loop : module3 | line: 1009 | essentialsofthewhilel
 LAB: Collatz's hypothesis : module3 | line :1036 | collatzshypothesis,py
 SECTION SUMMARY | while and for loop | line : 1097 | additionally exercises with answers | line : 1171
 Logic and bit operations in Python | and, or, not  | module3 | line: 1253 
+Sorting simple lists - the bubble sort algorithm | module3 | line 2016
+Sorting key takeaways | module3 | line 2138
+
 
 
 
