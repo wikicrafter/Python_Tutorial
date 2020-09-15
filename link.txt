@@ -11,6 +11,7 @@ Logic and bit operations in Python | and, or, not  | module3 | line: 1253
 Sorting simple lists - the bubble sort algorithm | module3 | line 2016
 Sorting key takeaways | module3 | line 2138
 How functions communicate with their environment | module4 | line: 222
+Function section summery | module4 line: 457
 
 
 
