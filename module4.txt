@@ -643,3 +643,139 @@ it is assumed that it implicitly returns None.
 
 Let's test it.
 _______________________________________________________________________________________________________________
+A few words about None: continued
+Take a look at the code in the editor.
+It's obvious that the strangeFunction function returns True when its argument is even.
+What does it return otherwise?
+We can use the following code to check it:
+print(strangeFunction(2))
+print(strangeFunction(1))
+This is what we see in the console:
+True
+None
+
+Don't be surprised next time you see None as a function result - it may be the 
+symptom of a subtle mistake inside the function.
+def strangeFunction(n):
+    if(n % 2 == 0):
+        return True
+_______________________________________________________________________________________________________________
+Effects and results: lists and functions
+There are two additional questions that should be answered here.
+The first is: may a list be sent to a function as an argument?
+Of course it may! Any entity recognizable by Python can play the role of a function argument, although it 
+has to be assured that the function is able to cope with it.
+So, if you pass a list to a function, the function has to handle it like a list.
+A function like this one here:
+def list_sum(lst):
+    s = 0
+    
+    for elem in lst:
+        s += elem
+    
+    return s
+and invoked like this:
+print(list_sum([5, 4, 3]))
+will return 12 as a result, but you should expect problems if you invoke it in this risky way:
+print(list_sum(5))
+Python's response will be unequivocal:
+TypeError: 'int' object is not iterable
+This is caused by the fact that a single integer value mustn't be iterated through by the for loop.
+_______________________________________________________________________________________________________________
+Effects and results: lists and functions - continued
+The second question is: may a list be a function result?
+Yes, of course! Any entity recognizable by Python can be a function result.
+Look at the code in the editor. The program's output will be like this:
+[4, 3, 2, 1, 0]
+Now you can write functions with and without results.
+Let's dive a little deeper into the issues connected with variables in functions. This is 
+essential for creating effective and safe functions.
+_______________________________________________________________________________________________________________
+100.1.11.110
+LAB: A leap year: writing your own functions
+Estimated time
+10-15 minutes
+Level of difficulty
+easy
+Objectives
+Familiarize the student with:
+projecting and writing parameterized functions;
+utilizing the return statement;
+testing the functions.
+
+Scenario
+Your task is to write and test a function which takes one argument (a year) and returns True if the year 
+is a leap year, or False otherwise.
+
+The seed of the function is already sown in the skeleton code in the editor.
+Note: we've also prepared a short testing code, which you can use to test your function.
+The code uses two lists - one with the test data, and the other containing the expected results. 
+The code will tell you if any of your results are invalid.
+
+def isYearLeap(year):
+#
+# put your code here
+#
+
+testData = [1900, 2000, 2016, 1987]
+testResults = [False, True, True, False]
+for i in range(len(testData)):
+	yr = testData[i]
+	print(yr,"->",end="")
+	result = isYearLeap(yr)
+	if result == testResults[i]:
+		print("OK")
+	else:
+		print("Failed")
+
+_______________________________________________________________________________________________________________
+LAB: How many days: writing and using your own functions
+Estimated time
+15-20 minutes
+Level of difficulty
+Medium
+Objectives
+Familiarize the student with:
+
+projecting and writing parameterized functions;
+utilizing the return statement;
+utilizing the student's own functions.
+
+Scenario
+Your task is to write and test a function which takes two arguments (a year and a month) and returns 
+the number of days for the given month/year pair (while only February is sensitive to the year value, 
+your function should be universal).
+
+The initial part of the function is ready. Now, convince the function to return None if its arguments 
+don't make sense.
+
+Of course, you can (and should) use the previously written and tested function (LAB 4.1.3.6). 
+It may be very helpful. We encourage you to use a list filled with the months' lengths. You can create it 
+inside the function - this trick will significantly shorten the code.
+
+We've prepared a testing code. Expand it to include more test cases.
+def isYearLeap(year):
+#
+# your code from LAB 4.1.3.6
+#
+
+def daysInMonth(year, month):
+#
+# put your new code here
+#
+
+testYears = [1900, 2000, 2016, 1987]
+testMonths = [2, 2, 1, 11]
+testResults = [28, 29, 31, 30]
+for i in range(len(testYears)):
+	yr = testYears[i]
+	mo = testMonths[i]
+	print(yr, mo, "->", end="")
+	result = daysInMonth(yr, mo)
+	if result == testResults[i]:
+		print("OK")
+	else:
+		print("Failed")
+
+_______________________________________________________________________________________________________________
+4.1.3.7
