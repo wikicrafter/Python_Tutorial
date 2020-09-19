@@ -1243,4 +1243,45 @@ print(isItATriangle(1, 1, 1))
 print(isItATriangle(1, 1, 3))
 
 _______________________________________________________________________________________________________________
-4.1.5.4 Creating functions | testing triangles
+Creating functions | testing triangles
+
+Some simple functions: triangles and the Pythagorean theorem
+Look at the code in the editor. It asks the user for three values. Then it makes use of the 
+isItATriangle function. The code is ready to run.
+In the second step, we'll try to ensure that a certain triangle is a right-angle triangle.
+We will need to make use of the Pythagorean theorem
+c2 = a2 + b2
+How do we recognize which of the three sides is the hypotenuse?
+The hypotenuse is the longest side.
+Here is the code:
+def isItATriangle(a, b, c):
+    return a + b > c and b + c > a and c + a > b
+
+def isItRightTriangle(a, b, c):
+    if not isItATriangle(a, b, c):
+        return False
+    if c > a and c > b:
+        return c ** 2 == a ** 2 + b ** 2
+    if a > b and a > c:
+        return a ** 2 == b ** 2 + c ** 2
+
+print(isItRightTriangle(5, 3, 4))
+print(isItRightTriangle(1, 3, 4))
+
+Look at how we test the relationship between the hypotenuse and the remaining 
+sides - we choose the longest side, and apply the Pythagorean theorem to check if everything 
+is right. This requires three checks in total.
+
+snippet:
+def isItATriangle(a, b, c):
+    return a + b > c and b + c > a and c + a > b
+
+a = float(input("Enter the first side's length: "))
+b = float(input("Enter the second side's length: "))
+c = float(input("Enter the third side's length: "))
+
+if isItATriangle(a, b, c):
+    print("Congratulations - it can be a triangle.")
+else:
+    print("Sorry, it won't be a triangle.")
+_______________________________________________________________________________________________________________
