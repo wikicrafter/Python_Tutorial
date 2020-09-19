@@ -1524,3 +1524,6 @@ Removing the commas won't spoil the program in any syntactical sense, but you wi
 get two single variables, not tuples.
 _______________________________________________________________________________________________________________
 4.1.6.2 Tuples and dictionaries
+4.1.6.4 Tuples and dictionaries
+4.1.6.5 Tuples and dictionaries
+
