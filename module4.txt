@@ -1709,11 +1709,41 @@ print(dictionary['cat'])
 print(phone_numbers['Suzy'])
 
 _______________________________________________________________________________________________________________
+How to use a dictionary: the keys()
+Can dictionaries be browsed using the for loop, like lists or tuples?
+No and yes.
+No, because a dictionary is not a sequence type - the for loop is useless with it.
+Yes, because there are simple and very effective tools that can adapt any dictionary to the for 
+loop requirements (in other words, building an intermediate link between the dictionary and a 
+temporary sequence entity).
+The first of them is a method named keys(), possessed by each dictionary. The method returns an 
+iterable object consisting of all the keys gathered within the dictionary. Having a group of keys 
+enables you to access the whole dictionary in an easy and handy way.
+
+Just like here:
+dictionary = {"cat" : "chat", "dog" : "chien", "horse" : "cheval"}
+
+for key in dictionary.keys():
+    print(key, "->", dictionary[key]
+
+The code's output looks as follows:
+horse -> cheval
+dog -> chien
+cat -> chat
+
+The sorted() function
+Do you want it sorted? Just enrich the for loop to get such a form:
+for key in sorted(dictionary.keys()):
+The sorted() function will do its best - the output will look like this:
+cat -> chat
+dog -> chien
+horse -> cheval
+
+_______________________________________________________________________________________________________________
+4.1.6.7 Tuples and dictionaries | methods
 
 
 
 
-4.1.6.4 Tuples and dictionaries
-4.1.6.5 Tuples and dictionaries
 
 
