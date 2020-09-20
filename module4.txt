@@ -1523,7 +1523,89 @@ oneElementTuple2 = 1.,
 Removing the commas won't spoil the program in any syntactical sense, but you will instead 
 get two single variables, not tuples.
 _______________________________________________________________________________________________________________
-4.1.6.2 Tuples and dictionaries
+
+How to use a tuple?
+If you want to get the elements of a tuple in order to read them over, you can use the same conventions 
+to which you're accustomed while using lists.
+Take a look at the code in the editor.
+The program should produce the following output - run it and check:
+1
+1000
+(10, 100, 1000)
+(1, 10)
+1
+10
+100
+1000
+The similarities may be misleading - don't try to modify a tuple's contents! It's not a list!
+All of these instructions (except the topmost one) will cause a runtime error:
+myTuple = (1, 10, 100, 1000)
+
+myTuple.append(10000)
+del myTuple[0]
+myTuple[1] = -10
+
+This is the message that Python will give you in the console window:
+AttributeError: 'tuple' object has no attribute 'append'
+
+example:
+myTuple = (1, 10, 100, 1000)
+
+print(myTuple[0])
+print(myTuple[-1])
+print(myTuple[1:])
+print(myTuple[:-2])
+
+for elem in myTuple:
+    print(elem)
+
+_______________________________________________________________________________________________________________
+How to use a tuple: continued
+What else can tuples do for you?
+the len() function accepts tuples, and returns the number of elements contained inside;
+the + operator can join tuples together (we've shown you this already)
+the * operator can multiply tuples, just like lists;
+the in and not in operators work in the same way as in lists.
+The snippet in the editor presents them all.
+The output should look as follows:
+9
+(1, 10, 100, 1000, 10000)
+(1, 10, 100, 1, 10, 100, 1, 10, 100)
+True
+True
+One of the most useful tuple properties is their ability to appear on the left side of the 
+assignment operator. You saw this phenomenon some time ago, when it was necessary to find 
+an elegant tool to swap two variables' values.
+Take a look at the snippet below:
+var = 123
+
+t1 = (1, )
+t2 = (2, )
+t3 = (3, var)
+
+t1, t2, t3 = t2, t3, t1
+
+print(t1, t2, t3)
+
+It shows three tuples interacting - in effect, the values stored in them 
+"circulate" - t1 becomes t2, t2 becomes t3, and t3 becomes t1
+Note: the example presents one more important fact: a tuple's elements can be variables, 
+not only literals. Moreover, they can be expressions if they're on the right side of the assignment 
+operator.
+myTuple = (1, 10, 100)
+
+t1 = myTuple + (1000, 10000)
+t2 = myTuple * 3
+
+print(len(t2))
+print(t1)
+print(t2)
+print(10 in myTuple)
+print(-10 not in myTuple)
+
+_______________________________________________________________________________________________________________
+
+
 4.1.6.4 Tuples and dictionaries
 4.1.6.5 Tuples and dictionaries
 
