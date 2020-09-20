@@ -1665,6 +1665,51 @@ Note:
 depending on what Python version you're using.
 
 _______________________________________________________________________________________________________________
+How to use a dictionary?
+If you want to get any of the values, you have to deliver a valid key value:
+print(dictionary['cat'])
+print(phone_numbers['Suzy'])
+Getting a dictionary's value resembles indexing, especially thanks to the brackets surrounding 
+the key's value.
+Note:
+if the key is a string, you have to specify it as a string;
+keys are case-sensitive: 'Suzy' is something different from 'suzy'.
+The snippet outputs two lines of text:
+chat
+5557654321
+And now the most important news: you mustn't use a non-existent key. Trying something like this:
+print(phone_numbers['president'])
+will cause a runtime error. Try to do it.
+
+Fortunately, there's a simple way to avoid such a situation. The in operator, 
+together with its companion, not in, can salvage this situation.
+The following code safely searches for some French words:
+
+dictionary = {"cat" : "chat", "dog" : "chien", "horse" : "cheval"}
+words = ['cat', 'lion', 'horse']
+
+for word in words:
+    if word in dictionary:
+        print(word, "->", dictionary[word])
+    else:
+        print(word, "is not in dictionary")
+
+The code's output looks as follows:
+cat -> chat
+lion is not in dictionary
+horse -> cheval
+
+dictionary = {"cat" : "chat", "dog" : "chien", "horse" : "cheval"}
+phone_numbers = {'boss' : 5551234567, 'Suzy' : 22657854310}
+empty_dictionary = {}
+
+###
+
+print(dictionary['cat'])
+print(phone_numbers['Suzy'])
+
+_______________________________________________________________________________________________________________
+
 
 
 
