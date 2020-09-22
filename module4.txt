@@ -1740,9 +1740,44 @@ dog -> chien
 horse -> cheval
 
 _______________________________________________________________________________________________________________
-4.1.6.7 Tuples and dictionaries | methods
+Tuples and dictionaries | methods
+How to use a dictionary: The items() and values() methods
+Another way is based on using a dictionary's method named items(). The method returns tuples
+ (this is the first example where tuples are something more than just an example of themselves) 
+ where each tuple is a key-value pair.
+This is how it works:
+dictionary = {"cat" : "chat", "dog" : "chien", "horse" : "cheval"}
 
+for english, french in dictionary.items():
+    print(english, "->", french)
 
+Note the way in which the tuple has been used as a for loop variable.
+The example prints:
+cat -> chat
+dog -> chien
+horse -> cheval
+There is also a method named values(), which works similarly to keys(), but returns values.
+Here is a simple example:
+dictionary = {"cat" : "chat", "dog" : "chien", "horse" : "cheval"}
+
+for french in dictionary.values():
+    print(french)
+
+As the dictionary is not able to automatically find a key for a given value, the role of this method is rather limited.
+Here is the expected output:
+cheval
+chien
+chat
+
+dictionary = {"cat" : "chat", "dog" : "chien", "horse" : "cheval"}
+
+for english, french in dictionary.items():
+    print(english, "->", french)
+
+_______________________________________________________________________________________________________________
+How to use a dictionary: modifying and adding values
+Assigning a new value to an existing key is simple - as dictionaries are fully mutable, there are no 
+obstacles to modifying them.
 
 
 
