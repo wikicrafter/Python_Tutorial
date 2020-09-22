@@ -1778,7 +1778,55 @@ ________________________________________________________________________________
 How to use a dictionary: modifying and adding values
 Assigning a new value to an existing key is simple - as dictionaries are fully mutable, there are no 
 obstacles to modifying them.
+We're going to replace the value "chat" with "minou", which is not very accurate, but it will work well with our example.
+Look:
+dictionary = {"cat" : "chat", "dog" : "chien", "horse" : "cheval"}
 
+dictionary['cat'] = 'minou'
+print(dictionary)
 
+The output is:
+{'dog': 'chien', 'horse': 'cheval', 'cat': 'minou'}
+Adding a new key
+Adding a new key-value pair to a dictionary is as simple as changing a value - you only have to 
+assign a value to a new, previously non-existent key.
+Note: this is very different behavior compared to lists, which don't allow you to assign values to non-existing indices.
+Let's add a new pair of words to the dictionary - a bit weird, but still valid:
+dictionary = {"cat" : "chat", "dog" : "chien", "horse" : "cheval"}
+
+dictionary['swan'] = 'cygne'
+print(dictionary)
+
+The example output:
+{'swan': 'cygne', 'horse': 'cheval', 'dog': 'chien', 'cat': 'chat'}
+Extra
+You can also insert an item to a dictionary by using the update() method, e.g.:
+dictionary = {"cat" : "chat", "dog" : "chien", "horse" : "cheval"}
+
+dictionary.update({"duck" : "canard"})
+print(dictionary)
+Removing a key
+Can you guess how to remove a key from a dictionary?
+Note: removing a key will always cause the removal of the associated value. Values cannot exist without their keys.
+This is done with the del instruction.
+Here's the example:
+dictionary = {"cat" : "chat", "dog" : "chien", "horse" : "cheval"}
+
+del dictionary['dog']
+print(dictionary)
+Note: removing a non-existing key causes an error.
+The example outputs:
+{'cat': 'chat', 'horse': 'cheval'}
+Extra
+To remove the last item in a dictionary, you can use the popitem() method:
+dictionary = {"cat" : "chat", "dog" : "chien", "horse" : "cheval"}
+
+dictionary.popitem()
+print(dictionary)    # outputs: {'cat' : 'chat', 'dog' : 'chien'}
+
+In the older versions of Python, i.e., before 3.6.7, the popitem() method 
+removes a random item from a dictionary.
+_______________________________________________________________________________________________________________
+4.1.6.9 Tuples and dictionaries
 
 
