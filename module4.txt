@@ -1974,4 +1974,121 @@ lst = list(tup)
 print(type(lst))    # outputs: <class 'list'>
 
 _______________________________________________________________________________________________________________
+Key takeaways: dictionaries
+1. Dictionaries are unordered*, changeable (mutable), and indexed collections of data. (*In Python 3.6x 
+dictionaries have become ordered by default.
+Each dictionary is a set of key : value pairs. You can create it by using the following syntax:
+myDictionary = {
+    key1 : value1,
+    key2 : value2,
+    key3 : value3,
+    }
+2. If you want to access a dictionary item, you can do so by making a reference to its key 
+inside a pair of square brackets (ex. 1) or by using the get() method (ex. 2):
+polEngDict = {
+    "kwiat" : "flower",
+    "woda"  : "water",
+    "gleba" : "soil"
+    }
+
+item1 = polEngDict["gleba"]    # ex. 1
+print(item1)    # outputs: soil
+
+item2 = polEngDict.get("woda")
+print(item2)    # outputs: water
+
+3. If you want to change the value associated with a specific key, you can do 
+so by referring to the item's key name in the following way:
+polEngDict = {
+    "zamek" : "castle",
+    "woda"  : "water",
+    "gleba" : "soil"
+    }
+
+polEngDict["zamek"] = "lock"
+item = polEngDict["zamek"]    # outputs: lock
+
+4. To add or remove a key (and the associated value), use the following syntax:
+myPhonebook = {}    # an empty dictionary
+
+myPhonebook["Adam"] = 3456783958    # create/add a key-value pair
+print(myPhonebook)    # outputs: {'Adam': 3456783958}
+
+del myPhonebook["Adam"]
+print(myPhonebook)    # outputs: {}
+
+You can also insert an item to a dictionary by using the update() method, 
+and remove the last element by using the popitem() method, e.g.:
+
+polEngDict = {"kwiat" : "flower"}
+
+polEngDict = update("gleba" : "soil")
+print(polEngDict)    # outputs: {'kwiat' : 'flower', 'gleba' : 'soil'}
+
+polEngDict.popitem()
+print(polEngDict)    # outputs: {'kwiat' : 'flower'}
+
+5. You can use the for loop to loop through a dictionary, e.g.:
+polEngDict = {
+    "zamek" : "castle",
+    "woda"  : "water",
+    "gleba" : "soil"
+    }
+
+for item in polEngDict:
+    print(item)    # outputs: zamek
+                   #          woda
+                   #          gleba
+
+6. If you want to loop through a dictionary's keys and values, you can use the items() method, e.g.:
+polEngDict = {
+    "zamek" : "castle",
+    "woda"  : "water",
+    "gleba" : "soil"
+    }
+
+for key, value in polEngDict.items():
+    print("Pol/Eng ->", key, ":", value)
+7. To check if a given key exists in a dictionary, you can use the in keyword:
+polEngDict = {
+    "zamek" : "castle",
+    "woda"  : "water",
+    "gleba" : "soil"
+    }
+
+if "zamek" in polEngDict:
+    print("Yes")
+else:
+    print("No")
+
+8. You can use the del keyword to remove a specific item, or delete a dictionary. 
+To remove all the dictionary's items, you need to use the clear() method:
+
+polEngDict = {
+    "zamek" : "castle",
+    "woda"  : "water",
+    "gleba" : "soil"
+    }
+
+print(len(polEngDict))    # outputs: 3
+del polEngDict["zamek"]    # remove an item
+print(len(polEngDict))    # outputs: 2
+
+polEngDict.clear()   # removes all the items
+print(len(polEngDict))    # outputs: 0
+
+del polEngDict    # removes the dictionary
+
+9. To copy a dictionary, use the copy() method:
+
+polEngDict = {
+    "zamek" : "castle",
+    "woda"  : "water",
+    "gleba" : "soil"
+    }
+
+copyDict = polEngDict.copy()
+
+_______________________________________________________________________________________________________________
+
 
