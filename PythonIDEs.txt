@@ -1,0 +1,130 @@
+IDE stands for Integrated Development Environment is defined as a coding tool that helps to automate 
+the process of editing, compiling, testing, etc. in an SDLC and it provides ease to the developer to 
+run, write and debug the code.
+It is specially designed for software development that consists of several tools which is used for 
+developing and testing the software.
+There are some Python IDEs which are as follows:
+PyCharm
+Spyder
+PyDev
+Atom
+Wing
+Jupyter Notebook
+Thonny
+Rodeo
+Microsoft Visual Studio
+Eric
+
+PyCharm
+PyCharm was developed by the Jet Brains, and it is a cross-platform Integrated Development 
+Environment (IDE) specially designed for python. It is the most widely used IDE and available in 
+both paid version and free open-source as well. It saves ample time by taking care of routine tasks.
+It is a complete python IDE that is loaded with a rich set of features like auto code completion, 
+quick project navigation, fast error checking and correction, remote development support, database 
+accessibility, etc.
+Features:
+Smart code navigation
+Errors Highlighting
+Powerful debugger
+Supports Python web development frameworks, i.e., Angular JS, Javascript
+
+Spyder
+Spyder is an open-source that has high recognition in the IDE market and most suitable for 
+data science. The full name of Spyder is Scientific Python Development Environment. It supports 
+all the significant platforms Linux, Windows, and MacOS X.
+It provides a set of features like localized code editor, document viewer, variable explorer, integrated 
+console, etc. and supports no. of scientific modules like NumPy, SciPy, etc.
+Features:
+Proper syntax highlighting and auto code completion
+Integrates strongly with IPython console
+Performs well in multi-language editor and auto code completion mode
+
+
+
+PyDev
+PyDev is defined as one of the commonly used Python IDE, which is an external plugin 
+for Eclipse. It is a natural choice of the Python developers that are coming from the Java 
+background and very popular in the market as Python interpreter.
+
+Aleksandar Totic is famous for his contribution to Mosaic browser and worked on Pydev project 
+during 2003-2004.
+Pydev has a feature which includes Django integration, automatic code completion, smart indents 
+and block indents, etc.
+Features:
+Strong Parameters like refactoring, debugging, code analysis, and code coverage function.
+It supports virtual environments, Mypy, and black formatter.
+Also supports PyLint integration, remote debugger, Unit test integration, etc.
+
+
+
+Atom 
+
+Atom is developed by GitHub, which is initially started as an open-source, cross-platform. 
+It is based on a framework, i.e., Electron which enables cross-platform desktop application using 
+Chromium and Node.js and generally known as "Hackable Text Editor for the 21st century".
+
+Features:
+Visualize the results on Atom without open any other window.
+A plugin named "Markdown Preview Plus" provides built-in support for editing and 
+visualizing Markdown files.
+
+
+Wing
+It is defined as a cross-platform IDE that is packed with necessary features and with decent 
+development support. Its personal edition is free of cost. The pro version comes with a 30 days 
+trial for the developers to try it out.
+It has several features that include auto-completion, syntax highlighting, indents, and debugging.
+Features:
+Customizable and can have extensions as well.
+Supports remote development, test-driven development along with the unit test.
+
+
+
+
+Jupyter Notebook
+Jupyter is one of the most used IPython notebook editors that is used across the Data Science industry. 
+It is a web application that is based on the server-client structure and allows you to create and 
+manipulate notebook documents. It makes the best use of the fact that python is an interpreted language.
+Features:
+Supports markdowns
+Easy creation and editing of codes
+Ideal for beginners in data science
+
+Thonny
+Thonny is another IDE which is best suited for learning and teaching programming. It is a software 
+developed at the University of Tartu and supports code completion and highlight syntax errors.
+Features:
+Simple debugger
+Supports highlighting errors and auto code completion
+
+
+Rodeo
+Rodeo is defined as one of the best IDE for python that is most widely used for data 
+science projects like taking data and information from different resources
+It supports cross-platform functionality and provides auto-completion of code.
+Features:
+Allows the functions for comparing data, interact, plot, and inspect data.
+Auto code completion, syntax highlighter, visual file navigator, etc.
+
+
+Microsoft Visual Studio
+Microsoft Visual Studio is an open-source code editor which was best suited for 
+development and debugging of latest web and cloud projects. It has its own marketplace for extensions.
+Features:
+Supports Python Coding in Visual studio
+Available in both paid and free version
+
+
+
+Eric Python
+The Eric Python is an editor which is developed in Python itself and can be used for 
+both professional and non-professional work.
+Features:
+Offers configurable window layout, editors, source code folding
+Advanced project management capability, version control
+In-built debugger and task management support
+
+__________________________________________________________________________________________________________
+
+
+
