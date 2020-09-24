@@ -1,4 +1,5 @@
 
+print("calculate two digits")
 def mfc(a,b):
   print(a+b, " " "addition")
   print(a-b, " " "subtraction")
