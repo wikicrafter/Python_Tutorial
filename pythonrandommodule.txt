@@ -1,0 +1,63 @@
+Python Random module
+The Python random module functions depend on a pseudo-random number generator function random(), 
+which generates the float number between 0.0 and 1.0.
+There are different types of functions used in a random module which is given below:
+
+random.random()
+This function generates a random float number between 0.0 and 1.0.
+
+random.randint()
+This function returns a random integer between the specified integers.
+
+random.choice()
+This function returns a randomly selected element from a non-empty sequence.
+
+Example
+
+# importing "random"  module.  
+import random  
+# We are using the choice() function to generate a random number from  
+# the given list of numbers.  
+print ("The random number from list is : ",end="")  
+print (random.choice([50, 41, 84, 40, 31]))  
+
+Output:
+
+The random number from list is : 84
+
+random.shuffle()
+This function randomly reorders the elements in the list.
+
+random.randrange(beg,end,step)
+This function is used to generate a number within the range specified in its argument. It accepts three 
+arguments, beginning number, last number, and step, which is used to skip a number in the range. Consider 
+the following example.
+
+# We are using randrange() function to generate in range from 100  
+# to 500. The last parameter 10 is step size to skip  
+# ten numbers when selecting.  
+import random  
+print ("A random number from range is : ",end="")  
+print (random.randrange(100, 500, 10))  
+
+Output:
+
+A random number from range is : 290
+
+random.seed()
+This function is used to apply on the particular random number with the seed argument. 
+It returns the mapper value. Consider the following example.
+
+# importing "random" module.  
+import random  
+# using random() to generate a random number  
+# between 0 and 1  
+print("The random number between 0 and 1 is : ", end="")  
+print(random.random())  
+  
+# using seed() to seed a random number  
+random.seed(4)  
+Output:
+
+The random number between 0 and 1 is : 0.4405576668981033
+___________________________________________________________________________________________________________
