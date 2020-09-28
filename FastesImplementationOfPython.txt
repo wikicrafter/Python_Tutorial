@@ -1,0 +1,44 @@
+Which is the fastest implementation of Python
+
+The newer Python version is faster than the previous version. Python 3.8 comes with the lot of modification that enhances it 
+performances. We can't understand the performance of Python is that there is often a compromise between versatile, dynamic 
+language, versus performance. We can't have everything at the same time. To test the performance of Python, programmer 
+should apply the alternative implementations. Python is an interpreted language, at the same time it also provide the 
+facility to compile the source code into the byte code that runs on a virtual machine. We can use the different compiler 
+for different purpose to give us a performance edge.
+
+In this tutorial, we will see the different implementation of Python.
+
+PyPy
+PyPy is one of the most popular alternative compilers which used by the Python developer to gain more speed. PyPy works on 
+the JIT (Just-In Time) compiler that compiles the part of code that enhances the performance. It also manage the memory 
+efficiently using the GC improvements. It supports the stackless mode that can work with the micro-thread for concurrency.
+
+Programmers have dispute about which one is the fastest - PyPy and CPython, but the general consensus is that is PyPy is faster.
+
+
+CPython
+The CPython is the most commonly used compiler of Python that written in C. It is a default compiler. The CPython converts the 
+source code into the intermediate byte code and runs it by using the CPython Virtual Machine. CPython also works with the stackless 
+mode that provides the micro-thread for concurrency.
+
+JPython or JPython
+We can assume that JPython is Java implementation of the Python. It allows the unified Python script can use onto the 
+Java Platform. Java Programmers will use it bind the Python script into the large Java Applications. We can also use the 
+Java threads to write multiple-threaded programs. It provides some speed but slower than the CPython. Python can be provided 
+the extra efficiency in large scale Java application development.
+
+IronPython
+The IronPython is the implementation of Python which is used to work with the .Net. We can use the .Net libraries through the 
+Python scripts. It doesn't support the GIL; that means the performance of the multi-thread code is much better that other code. 
+It provides the facility that we can work on the web server using the Python framework instead of ASP.NET.
+
+Nuitka
+
+Nuitka is a newly created compiler and not enough as the other compilers but it compiles the Python code in to C/C++ executable. 
+It can work with the every version of Python from 2.6 to 3.8 and is twice faster than the CPython. We can use the Nuitka to 
+develop the stand-alone executable for Python code even on Windows.
+This is all about of the different implementation of the Python. You can find the CPython faster than the other compilers but it is 
+also dependent on the different use cases.
+_____________________________________________________________________________________________________________________________________
+
