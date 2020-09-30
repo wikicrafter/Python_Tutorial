@@ -2,7 +2,7 @@ nterms = int(input("How many terms you want? "))
 # first two terms  
 n1 = 0  
 n2 = 1  
-count = 2  
+count = 2
 # check if the number of terms is valid  
 if nterms <= 0:  
    print("Plese enter a positive integer")  
