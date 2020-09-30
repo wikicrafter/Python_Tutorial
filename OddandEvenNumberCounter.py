@@ -22,5 +22,5 @@ while number != 0:
     number = int(input("Enter a number or type 0 to stop: "))
 
 # print results
-print("Odd numbers count:", odd_numbers)
-print("Even numbers count:", even_numbers)
+print("Odd numbers count is:", odd_numbers)
+print("Even numbers count is:", even_numbers)
