@@ -10,4 +10,7 @@ def isItRightTriangle(a, b, c):
         return a ** 2 == b ** 2 + c ** 2
 
 print(isItRightTriangle(5, 3, 4))
-print(isItRightTriangle(1, 3, 4))
+
+print(isItRightTriangle(1, 3,  4))
+
+
