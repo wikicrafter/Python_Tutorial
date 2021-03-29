@@ -16,4 +16,4 @@ Sorry for a little bit mess, but I hadn't got time yet to make it more friendly.
 Feel free to contribute 
 
 
-![Python](python-socket)
+![Python](python-socket.jpg)
