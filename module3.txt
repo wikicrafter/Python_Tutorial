@@ -1,6 +1,6 @@
 Programming essentials in python: Module 3
 In this module you will learn about:
-Voolean values
+Boolean values
 if-elif-else instructions
 the while and for loops
 flow control
