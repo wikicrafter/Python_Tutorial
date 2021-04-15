@@ -6,9 +6,7 @@ the fundamentals of computer programming;
 setting up your programming environment;
 compilation vs. interpretation;
 introduction to Python.
-
-_______________________________________________________
-
+-------------------------------------------------------------------------------
 How does a computer program work?
 This guide aims to show you what the Python language is and what it is used for.
 Let's start from the absolute basics.
