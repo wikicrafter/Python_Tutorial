@@ -6,7 +6,8 @@ the while and for loops
 flow control
 logical and bitwise operations 
 lists and arrays 
-____________________________________________________________________________________________________________
+
+___________________________________________________________________________________________
 Questions and answers
 A programmer writes a program and the program asks questions.
 A computer executes the program and provides the answers. The program must be able to react according to 
