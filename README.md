@@ -24,7 +24,7 @@ We use here python upper  3.*.* version
 
 #### Second env I used is a <a href="https://pypi.org/project/pipenv/">pipenv</a>
  to get it u can simply type: pip install pipenv <br>
- to create environment type: pipenv install <br>
+ to create environment type: pipenv install <br> if it doesn't react use this one: python -m pipenv <br>
  to activate type: pipenv shell <br>
  to exit press: CRT + D <br>
  to remove pipenv type: pipenv --rm
