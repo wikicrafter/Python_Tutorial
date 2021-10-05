@@ -36,6 +36,8 @@ We use here python upper  3.*.* version
   </br>Open up the command prompt and type ‘workon Project_Name’ to activate the environment and move into your root project folder
   </br>command: workon Project_Name <br>
   <hr>
+<a href="https://wikicrafter.github.io/Python_Tutorial/">Demo</a>
+<br>
 Sorry for a little bit mess, but I hadn't got time yet to make it more friendly.
 
 Feel free to contribute 
