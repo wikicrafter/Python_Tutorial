@@ -18,6 +18,9 @@ We use here python upper  3.*.* version
 * Cheats:
  #### Creation of virtual environments is done by executing the command [venv](https://docs.python.org/3/library/venv.html):
 > #### python3 -m venv /path/to/new/virtual/environment
+> #### For Windows users: c:\>python -m venv c:\path\to\myenv
+> To activate go to last directory and type command: Scripts\activate 
+> To deactiavte just type: deactivate
 #### Another way
 > 1. Set a virtual environment with [virtualenvwrapper](https://pypi.org/project/virtualenvwrapper-win/)
 </br>command: mkvirtualenv Project_Name
