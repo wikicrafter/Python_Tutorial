@@ -23,10 +23,10 @@ We use here python upper  3.*.* version
 > To deactiavte just type: deactivate
 
 #### Second env I used is a <a href="https://pypi.org/project/pipenv/">pipenv</a>
-> to get it u can simply type: pip install pipenv
-> to create environment type: pipenv install 
-> to activate type: pipenv shell 
-> to exit press: CRT + D
+ to get it u can simply type: pip install pipenv <br>
+ to create environment type: pipenv install <br>
+ to activate type: pipenv shell <br>
+ to exit press: CRT + D
 <br>
 
 #### Another way
