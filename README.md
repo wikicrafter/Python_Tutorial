@@ -16,7 +16,7 @@ The other .py extension files you see in this repository is jus an examples, the
 We use here python upper  3.*.* version
 
 * Cheats:
-1. Set a virtual environment 
+1. Set a virtual environment with [virtualenvwrapper](https://pypi.org/project/virtualenvwrapper-win/)
 </br>command: mkvirtualenv Project_Name
 </br>Anything we install now will be specific to this project, and available to the projects we connect to this environment.
 2. Set Project Directory
@@ -28,7 +28,8 @@ We use here python upper  3.*.* version
   </br>Notice how the parenthesis disappear.
 4. Workon 
   </br>Open up the command prompt and type ‘workon Project_Name’ to activate the environment and move into your root project folder
-  </br>command: workon Project_Name
+  </br>command: workon Project_Name <br>
+  <hr>
 Sorry for a little bit mess, but I hadn't got time yet to make it more friendly.
 
 Feel free to contribute 
