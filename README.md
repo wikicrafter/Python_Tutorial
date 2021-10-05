@@ -27,6 +27,7 @@ We use here python upper  3.*.* version
  to create environment type: pipenv install <br>
  to activate type: pipenv shell <br>
  to exit press: CRT + D
+ to remove pipenv type: pipenv --rm
 <br>
 
 #### Another way
