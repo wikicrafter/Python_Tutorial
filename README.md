@@ -26,7 +26,7 @@ We use here python upper  3.*.* version
  to get it u can simply type: pip install pipenv <br>
  to create environment type: pipenv install <br>
  to activate type: pipenv shell <br>
- to exit press: CRT + D
+ to exit press: CRT + D <br>
  to remove pipenv type: pipenv --rm
 <br>
 
