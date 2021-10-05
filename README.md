@@ -21,6 +21,13 @@ We use here python upper  3.*.* version
 > #### For Windows users: c:\>python -m venv c:\path\to\myenv
 > To activate go to last directory and type command: Scripts\activate 
 > To deactiavte just type: deactivate
+
+#### Second env I used is a <a href="https://pypi.org/project/pipenv/">pipenv</a>
+> to get it u can simply type: pip install pipenv
+> to create environment type: pipenv install 
+> to activate type: pipenv shell 
+> to exit press: CRT + D
+<br>
 #### Another way
 > 1. Set a virtual environment with [virtualenvwrapper](https://pypi.org/project/virtualenvwrapper-win/)
 </br>command: mkvirtualenv Project_Name
