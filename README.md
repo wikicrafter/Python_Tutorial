@@ -45,8 +45,16 @@ We use here python upper  3.*.* version
   <br>Open up the command prompt and type ‘workon Project_Name’ to activate the environment and move into your root project folder
   <br>command: workon Project_Name <br>
   <hr>
+
+````
+Note: If you already have something running on port 8000, you can choose another port by running the server command followed by an alternative port number, e.g. python3 -m http.server 7800 (Python 3.x) or python -m SimpleHTTPServer 7800 (Python 2.x). You can then access your content at localhost:7800.
+````
+
 <a href="https://wikicrafter.github.io/Python_Tutorial/">Demo</a>
 <br>
+
+
+
 Sorry for a little bit mess, but I hadn't got time yet to make it more friendly.
 
 Feel free to contribute 
