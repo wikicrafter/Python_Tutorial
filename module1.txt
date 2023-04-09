@@ -338,7 +338,7 @@ ________________________________________________________________________________
 
 There is more than one Python: CPython and Cython
 
-Python aka CPython
+Python Vs CPython
 In addition to Python 2 and Python 3, there is more than one version of each.
 First of all, there are the Pythons which are maintained by the people gathered around the PSF 
 (Python Software Foundation), a community that aims to develop, improve, expand, and popularize 
