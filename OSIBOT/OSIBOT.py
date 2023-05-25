@@ -1,6 +1,5 @@
 import tkinter as tk
 from tkinter import ttk
-from tkinter import messagebox
 
 # Function to handle user queries and provide responses
 def get_osi_model_info(event=None):
@@ -23,17 +22,18 @@ def ask_question(layer):
     question = osi_model[layer]["question"]
     response = osi_model[layer]["answer"]
 
+    question_label.configure(text=question)
     response_text.configure(state='normal')
     response_text.delete('1.0', 'end')
-    response_text.insert('1.0', question + "\n\n" + response)
+    response_text.insert('1.0', response)
     response_text.configure(state='disabled')
 
-# Function to show the tooltip
+# Function to show tooltip
 def show_tooltip(event, text):
     tooltip_label.configure(text=text)
-    tooltip_label.place(x=event.x_root, y=event.y_root, anchor='sw')
+    tooltip_label.place(x=event.x_root, y=event.y_root, anchor='nw')
 
-# Function to hide the tooltip
+# Function to hide tooltip
 def hide_tooltip(event):
     tooltip_label.place_forget()
 
@@ -41,17 +41,14 @@ def hide_tooltip(event):
 window = tk.Tk()
 window.title("OSI Model Bot")
 window.configure(bg="white")
-window.minsize(500, 400)  # Set a minimum window size
+window.minsize(790, 400)  # Set a minimum window size
+window.maxsize(window.winfo_width(), window.winfo_height())  # Set maximum window size
 
 # Create the user input field
 user_input = tk.Entry(window, width=50)
 user_input.pack(pady=10)
 user_input.focus()  # Set focus on the input field
 user_input.bind('<Return>', get_osi_model_info)  # Bind the Enter key event
-
-# Create a frame for layer buttons
-button_frame = ttk.Frame(window, padding=10)
-button_frame.pack()
 
 # Create buttons for each layer's question
 osi_model = {
@@ -99,6 +96,9 @@ osi_model = {
     }
 }
 
+button_frame = ttk.Frame(window)
+button_frame.pack()
+
 for layer in osi_model:
     description = osi_model[layer]["description"]
     button = ttk.Button(button_frame, text=layer.title(), command=lambda l=layer: ask_question(l))
@@ -109,6 +109,10 @@ for layer in osi_model:
 # Create a frame for the response
 response_frame = ttk.Frame(window)
 response_frame.pack(pady=10)
+
+# Create a label for the current question
+question_label = ttk.Label(response_frame, text="", font=("Arial", 12, "bold"))
+question_label.pack(pady=5)
 
 # Create a scrollable text widget for the response
 response_text = tk.Text(response_frame, bg="white", fg="black", wrap="word", height=10)
