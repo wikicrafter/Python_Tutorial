@@ -8,7 +8,7 @@ def get_osi_model_info(event=None):
     if query in osi_model:
         response = osi_model[query]["description"] + "\n\n" + "Examples:\n" + osi_model[query]["examples"]
     else:
-        response = "I'm sorry, I don't have information about that specific OSI layer."
+        response = "I'm sorry, I don't have information about that yet or you typed sth wrong."
 
     response_text.configure(state='normal')
     response_text.delete('1.0', 'end')
@@ -30,7 +30,7 @@ def ask_question(layer):
 
 # Function to show tooltip
 def show_tooltip(event, text):
-    tooltip_label.configure(text=text)
+    # tooltip_label.configure(text=text)
     tooltip_label.place(x=event.x_root, y=event.y_root, anchor='nw')
 
 # Function to hide tooltip
