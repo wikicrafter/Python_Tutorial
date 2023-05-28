@@ -2,13 +2,23 @@ import tkinter as tk
 from tkinter import ttk
 
 # Function to handle user queries and provide responses
+# Function to handle user queries and provide responses
 def get_osi_model_info(event=None):
     query = user_input.get().strip().lower()
+
+    # Identify spaces
+    spaces = query.count(" ")
+
+    # Identify new lines
+    new_lines = query.count("\n")
 
     if query in osi_model:
         response = osi_model[query]["description"] + "\n\n" + "Examples:\n" + osi_model[query]["examples"]
     else:
-        response = "I'm sorry, I don't have information about that yet or you typed sth wrong."
+        response = "I'm sorry, I don't have information about that yet or you typed something wrong."
+
+    # Add space and new line information to the response
+    response += f"\n\nSpaces: {spaces}\nNew Lines: {new_lines}"
 
     response_text.configure(state='normal')
     response_text.delete('1.0', 'end')
@@ -16,6 +26,7 @@ def get_osi_model_info(event=None):
     response_text.configure(state='disabled')
 
     user_input.delete(0, 'end')
+
 
 # Function to handle layer-specific questions
 def ask_question(layer):
@@ -30,7 +41,7 @@ def ask_question(layer):
 
 # Function to show tooltip
 def show_tooltip(event, text):
-    # tooltip_label.configure(text=text)
+    #tooltip_label.configure(text=text)
     tooltip_label.place(x=event.x_root, y=event.y_root, anchor='nw')
 
 # Function to hide tooltip
